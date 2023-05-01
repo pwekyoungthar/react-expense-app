@@ -7,22 +7,18 @@ import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  const [title, setTitle] = useState(props.title);
-  console.log("Expense Item Working");
-  const clickHandler = () => {
-    setTitle("Update");
-    console.log(title);
-  };
+  // const [title, setTitle] = useState(props.title);
 
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <div>
-        <ExpenseTitle title={title} />
-        <ExpenseItemPrice amount={props.amount} />
-      </div>
-      <button onClick={clickHandler}>Change Title</button>
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        <div>
+          <ExpenseTitle title={props.title} />
+          <ExpenseItemPrice amount={props.amount} />
+        </div>
+      </Card>
+    </li>
   );
 };
 
